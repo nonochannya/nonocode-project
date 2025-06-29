@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    	  <!-- AniCollection.css library -->
+          <link rel="stylesheet" href="https://anijs.github.io/lib/anicollection/anicollection.css">
+    <script src="index.js"> </script>
+    <link rel="icon" href="nonoIcone.png" type="image/x-icon" class="icon">
+    <title>nonocode</title>
+
+    <style>
+        title{
+            border-radius: 5px
+        }
+      body{
+         background-color: rgb(0, 0, 0);
+         color: rgb(105, 67, 110);
+        }
+        .b{
+          position: relative;
+          left: 90%;
+        }
+        h1{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .content{
+            display: grid;
+            column-gap: 250px;
+            grid-template-columns:600px 600px  ;
+            margin: 5px; 
+            grid-template-rows: 60px 200px;
+            row-gap: 10px;
+            padding: 10px;
+  
+        }
+        .input, .Decode{ 
+            text-align: center;
+            font-size:20px ;
+            border: none;
+            border-radius: 150px;
+            outline: none !important;
+            white-space: nowrap;
+            margin-bottom: 5px;
+            overflow:-moz-hidden-unscrollable;
+            background-size: 200px;
+            color: rgb(0, 0, 0);
+        }
+        .output , .output01{
+            text-align: left;
+            font-size:20px ;
+            height: 300px;
+            line-height: 20px;
+            color: white;
+            background-color: rgba(98, 26, 141, 0.3);
+            border-radius: 10px;
+            overflow: scroll;
+            margin-top: 50px;
+
+        }
+        .output{
+            width: 800px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            background-size: 200px;
+           
+        }
+        .output01{
+          width:600px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            background-size: 200px;
+        }
+        label{
+            text-align: center;
+            font-size:20px ;
+        }
+        input:focus {
+            outline: none; /* Remove default focus outline */
+            background-color: antiquewhite;
+        }
+        .fade-out{
+            animation-name: text;
+            animation-duration: 0.5s;
+            animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+@keyframes text{
+    from{font-size: 0px};
+    to{font-size: 20px};
+}
+    </style>
+</head>
+<body >
+    <div class="content"  >
+        <label class="name animate__animated animate__zoomInLeft"> write your data write it here👇👇</label> 
+        <label class="name animate__animated animate__zoomInLeft"> write your nonocode here 👇👇</label> 
+        <input type="text" class="input animate__animated animate__flipInX" onkeyup="input()" data-anijs="if: click, do: tada animated">  
+        <input type="text" class="Decode animate__animated animate__flipInX" data-anijs="if: click, do: tada animated" onkeyup="input01()">
+        <div class="output animate__animated animate__zoomInDown"></div>
+        <div  class="output01 animate__animated animate__zoomInDown" ></div>
+    </div>
+    <script src="https://anijs.github.io/lib/anijs/anijs-min.js"></script> 
+  
+</body>
+</html>
