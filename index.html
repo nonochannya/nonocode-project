@@ -29,220 +29,144 @@
         body {
             font-family: 'Fredoka', sans-serif;
             background-color: #171B26;
-            color: #F8F4FF;
+            color: rgb(232, 224, 224);
+            display: flex;
+            justify-content: center;
+            align-items: center;
             min-height: 100vh;
             padding: 2rem;
+            flex-direction: column;
+            text-align: center;
         }
-        
-        .main-container {
-            max-width: 1400px;
-            margin: 0 auto;
+        .container {
             display: flex;
             flex-direction: column;
             gap: 3rem;
-        }
-        
-        .sections-container {
-            display: flex;
-            gap: 2rem;
             width: 100%;
+            max-width: 1000px;
+            font-size: 25px;
         }
-        
         .section-box {
             background-color: #282F3E;
-            padding: 3rem;
+            padding: 2.5rem;
             border-radius: 2rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             border: 2px solid #374357;
-            flex: 1;
-            min-height: 400px;
         }
-        
-        .poem-section {
-            background-color: #282F3E;
-            padding: 3rem;
-            border-radius: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border: 2px solid #374357;
-            width: 100%;
-            min-height: 300px;
-            margin-top: 2rem;
-        }
-        
         .input-group {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            gap: 1rem;
         }
-        
         .cute-input {
             width: 100%;
-            padding: 1.5rem 2rem;
+            padding: 1rem 1.5rem;
             border-radius: 1.5rem;
             border: 2px solid #374357;
             background-color: #33384A;
             transition: all 0.3s ease;
-            font-size: 1.1rem;
+            font-size: 1rem;
             outline: none;
             color: #F8F4FF;
         }
-        
         .cute-input:focus {
             border-color: #A8D8F7;
             box-shadow: 0 0 0 4px rgba(168, 216, 247, 0.3);
             background-color: #33384A;
         }
-        
         .cute-output-container {
             position: relative;
         }
-        
         .cute-output {
             width: 100%;
-            height: 300px;
-            padding: 2rem;
+            height: 250px;
+            padding: 1.5rem;
             border-radius: 1.5rem;
             background-color: #374357;
             border: 2px solid #4A566C;
             color: #F8F4FF;
-            font-size: 1.1rem;
+            font-size: 1rem;
             overflow-y: auto;
             white-space: pre-wrap;
             word-wrap: break-word;
-            line-height: 1.6;
+            line-height: 1.5;
             text-align: left;
             transition: background-color 0.3s ease;
         }
-        
         .copy-button {
             position: absolute;
             top: 1rem;
             right: 1rem;
             background-color: #FFD1DC;
             color: #171B26;
-            padding: 0.75rem;
+            padding: 0.5rem;
             border-radius: 50%;
             cursor: pointer;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s ease, background-color 0.2s ease;
             font-size: 1rem;
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        
         .copy-button:hover {
             background-color: #FCE788;
             transform: scale(1.1);
         }
-        
         .copy-button svg {
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
         }
-        
-        .cute-button {
-            background-color: #A8D8F7;
-            color: #171B26;
-            padding: 1.5rem 3rem;
-            border-radius: 1.5rem;
-            font-size: 1.5rem;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s ease, background-color 0.2s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            margin: 0 auto;
-            display: block;
-        }
-        
-        .cute-button:hover {
-            transform: translateY(-3px);
-            background-color: #FCE788;
-        }
-        
         h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 700;
             color: #A8D8F7;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            text-align: center;
         }
-        
-        .section-label {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #FFD1DC;
-            margin-bottom: 1rem;
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
-        
         .feedback-message {
             position: absolute;
             bottom: 0.5rem;
             left: 50%;
             transform: translateX(-50%);
-            background-color: rgba(255, 209, 220, 0.9);
+            background-color: rgba(255, 209, 220, 0.8);
             color: #171B26;
-            padding: 0.5rem 1rem;
+            padding: 0.25rem 0.75rem;
             border-radius: 1rem;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             opacity: 0;
             transition: opacity 0.5s ease;
         }
-        
         .feedback-message.show {
             opacity: 1;
         }
 
-        @media (max-width: 1024px) {
-            .sections-container {
-                flex-direction: column;
-            }
-            
-            h1 {
-                font-size: 3rem;
-            }
-            
-            .section-box, .poem-section {
-                padding: 2rem;
-            }
-        }
-        
         @media (max-width: 768px) {
-            .main-container {
-                padding: 1rem;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .section-box, .poem-section {
-                padding: 1.5rem;
-            }
-            
-            .cute-output {
-                height: 250px;
+            .grid-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <div class="main-container">
+    <div class="container">
         <h1>nono code to nono code your life</h1>
 
-        <div class="sections-container">
+        <div class="grid-container">
             <!-- Encoding Section -->
             <div class="section-box">
                 <div class="input-group">
-                    <div class="section-label">Write your message here 👇</div>
-                    <input type="text" id="encode-input" class="cute-input" onkeyup="input()" placeholder="Type something special...">
+                    <label class="text-xl font-medium text-lightPink">Write your message here 👇</label>
+                    <input type="text" class="cute-input" onkeyup="input()" placeholder="Type something special...">
                 </div>
-                <div class="cute-output-container">
+                <div class="cute-output-container mt-4">
                     <div id="encode-output" class="cute-output"></div>
                     <button class="copy-button" onclick="copyToClipboard('encode-output', this)">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -256,10 +180,10 @@
             <!-- Decoding Section -->
             <div class="section-box">
                 <div class="input-group">
-                    <div class="section-label">Decode your Nonocode here 👇</div>
-                    <input type="text" id="decode-input" class="cute-input" onkeyup="input01()" placeholder="Paste nonocode to decode...">
+                    <label class="text-xl font-medium text-lightPink">Decode your Nonocode here 👇</label>
+                    <input type="text" class="cute-input" onkeyup="input01()" placeholder="Paste nonocode to decode...">
                 </div>
-                <div class="cute-output-container">
+                <div class="cute-output-container mt-4">
                     <div id="decode-output" class="cute-output"></div>
                     <button class="copy-button" onclick="copyToClipboard('decode-output', this)">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -270,153 +194,229 @@
                 </div>
             </div>
         </div>
-
-        <!-- Poem Section -->
-        <div class="poem-section">
-            <div class="input-group">
-                <button class="cute-button" onclick="generatePoem()">
-                    ✨ Nono-Poem ✨
-                </button>
-            </div>
-            <div class="cute-output-container">
-                <div id="poem-output" class="cute-output"></div>
-                <button class="copy-button" onclick="copyToClipboard('poem-output', this)">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M7 6V3.5A1.5 1.5 0 0 1 8.5 2H18a1.5 1.5 0 0 1 1.5 1.5v13A1.5 1.5 0 0 1 18 17h-1.5V18.5a1.5 1.5 0 0 1-1.5 1.5H6a1.5 1.5 0 0 1-1.5-1.5V8.5A1.5 1.5 0 0 1 6 7h1.5zM6 8.5v10h10v-1.5a1.5 1.5 0 0 1 1.5-1.5h1.5V3.5H8.5V6H7v2.5zM15 8h-1.5a.5.5 0 0 0-.5.5V17h-8.5a.5.5 0 0 0-.5.5V21h10a.5.5 0 0 0 .5-.5V8.5a.5.5 0 0 0-.5-.5z"/>
-                    </svg>
-                    <span class="feedback-message">Copied!</span>
-                </button>
-            </div>
-        </div>
     </div>
 
-    <!-- JavaScript logic -->
-    <script>
-        const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-        const nono = [
-            "oooon", "ooono", "ooonn", "oonoo", "oonon",
-            "oonno", "oonnn", "onooo", "onoon", "onono",
-            "ononn", "onnoo", "onnon", "onnno", "onnnn",
-            "noooo", "nooon", "noono", "noonn", "nonoo",
-            "nonon", "nonno", "nonnn", "nnooo", "nnoon",
-            "nnono",
-        ];
+<script>
+  // Alphabet mapping
+  const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+  const nono = [
+    "oooon","ooono","ooonn","oonoo","oonon",
+    "oonno","oonnn","onooo","onoon","onono",
+    "ononn","onnoo","onnon","onnno","onnnn",
+    "noooo","nooon","noono","noonn","nonoo",
+    "nonon","nonno","nonnn","nnooo","nnoon",
+    "nnono"
+  ];
 
-        function input() {
-            let inputWord = document.getElementById('encode-input').value.toLowerCase();
-            let outputWord = "";
+  // Leftover patterns (6 total) - 5 chars each, keep consistent
+  const leftovers = ["ooooo","nnonn","nnnoo","nnnon","nnnno","nnnnn"];
 
-            for (let i = 0; i < inputWord.length; i++) {
-                let inputChar = inputWord[i];
-                let index = alphabet.indexOf(inputChar);
+  // Assign separators using leftovers
+  const SEP_NUM = leftovers[0]; // numbers
+  const SEP_SYM = leftovers[1]; // symbols
+  const SEP_EMO = leftovers[2]; // emojis
 
-                if (index !== -1) {
-                    outputWord += nono[index];
-                } else {
-                    outputWord += inputChar;
-                }
-            }
-            document.getElementById('encode-output').innerHTML = outputWord;
+  // Maps for numbers, symbols, emojis
+  const numbers = "0123456789".split("");
+  // include math symbols (+ - * / =) and other punctuation; keep length <= 26
+  const symbols = [":",";",".","!"," >", "<","-","+","=","*","/","(",")","_","[","]","{","}","?","@","#","$","%","^","&","|"];
+  const emojis = ["😀","😂","😍","😎","😭"];
+
+  // Utility to convert an index into a 5-char nono token (wraps safely)
+  function toNono(index) {
+    return nono[index % nono.length];
+  }
+
+  // ---------- ENCODER ----------
+  function input() {
+    // first input in .container is encoder
+    let text = document.querySelectorAll('.container input')[0].value;
+    let result = "";
+    let currentMode = null;
+
+    for (let i = 0; i < text.length; i++) {
+      let ch = text[i];
+      let lower = ch.toLowerCase();
+
+      // LETTER
+      if (alphabet.includes(lower)) {
+        // if we were in a non-letter mode, close it by appending its separator once
+        if (currentMode) {
+          result += currentMode;
+          currentMode = null;
+        }
+        result += nono[alphabet.indexOf(lower)];
+        continue;
+      }
+
+      // NUMBER
+      if (numbers.includes(ch)) {
+        if (currentMode !== SEP_NUM) {
+          if (currentMode) result += currentMode; // close previous mode
+          result += SEP_NUM; // open numbers mode
+          currentMode = SEP_NUM;
+        }
+        result += toNono(numbers.indexOf(ch));
+        continue;
+      }
+
+      // SYMBOL
+      if (symbols.includes(ch)) {
+        if (currentMode !== SEP_SYM) {
+          if (currentMode) result += currentMode;
+          result += SEP_SYM;
+          currentMode = SEP_SYM;
+        }
+        result += toNono(symbols.indexOf(ch));
+        continue;
+      }
+
+      // EMOJI
+      if (emojis.includes(ch)) {
+        if (currentMode !== SEP_EMO) {
+          if (currentMode) result += currentMode;
+          result += SEP_EMO;
+          currentMode = SEP_EMO;
+        }
+        result += toNono(emojis.indexOf(ch));
+        continue;
+      }
+
+      // OTHER / UNMAPPED CHAR (space, newline, letters with accents, etc.)
+      if (currentMode) {
+        result += currentMode;
+        currentMode = null;
+      }
+      result += ch;
+    }
+
+    // close any open mode at the end
+    if (currentMode) result += currentMode;
+
+    document.getElementById('encode-output').innerText = result;
+  }
+
+  // ---------- DECODER ----------
+  function input01() {
+    // second input in .container is decoder
+    let text = document.querySelectorAll('.container input')[1].value;
+    let result = "";
+    let i = 0;
+    let mode = null;
+
+    while (i < text.length) {
+      // If not in a mode, detect opening separator
+      if (!mode && text.startsWith(SEP_NUM, i)) {
+        mode = SEP_NUM;
+        i += SEP_NUM.length;
+        continue;
+      }
+      if (!mode && text.startsWith(SEP_SYM, i)) {
+        mode = SEP_SYM;
+        i += SEP_SYM.length;
+        continue;
+      }
+      if (!mode && text.startsWith(SEP_EMO, i)) {
+        mode = SEP_EMO;
+        i += SEP_EMO.length;
+        continue;
+      }
+
+      // If inside a mode, check for closing separator OR read a 5-char token
+      if (mode) {
+        // store closing token before we possibly clear mode (avoid using mode after setting null)
+        const closingSep = mode;
+        // closing separator?
+        if (text.startsWith(closingSep, i)) {
+          i += closingSep.length;
+          mode = null;
+          continue;
         }
 
-        function input01() {
-            let inputWord = document.getElementById('decode-input').value.toLowerCase();
-            let outputWord01 = "";
-            let i = 0;
-
-            while (i < inputWord.length) {
-                let foundPattern = false;
-
-                for (let len = 6; len >= 1; len--) {
-                    let inputChar = inputWord.substring(i, i + len);
-                    let index = nono.indexOf(inputChar);
-                    if (index !== -1) {
-                        outputWord01 += alphabet[index];
-                        i += len;
-                        foundPattern = true;
-                        break;
-                    }
-                }
-                if (!foundPattern) {
-                    outputWord01 += inputWord[i];
-                    i++;
-                }
-            }
-
-            if (inputWord === 'nono') {
-                outputWord01 = 'YEAH YEAH!!!';
-            }
-
-            document.getElementById('decode-output').innerHTML = outputWord01;
+        // if not enough characters left for a full token, break and append rest literally
+        if (i + 5 > text.length) {
+          // append remaining raw chars and break
+          result += text.substring(i);
+          break;
         }
-        
-        function copyToClipboard(elementId, button) {
-            const outputElement = document.getElementById(elementId);
-            const textToCopy = outputElement.innerText;
-            const feedbackMessage = button.querySelector('.feedback-message');
 
-            // Use the fallback method for compatibility
-            const textArea = document.createElement("textarea");
-            textArea.value = textToCopy;
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            
-            try {
-                document.execCommand('copy');
-                feedbackMessage.classList.add('show');
-                setTimeout(() => feedbackMessage.classList.remove('show'), 1500);
-            } catch (err) {
-                console.error('Failed to copy text: ', err);
-            }
-            document.body.removeChild(textArea);
+        // read 5-char token and map back
+        const seg = text.substring(i, i + 5);
+        const idx = nono.indexOf(seg);
+        i += 5;
+
+        if (idx !== -1) {
+          if (closingSep === SEP_NUM && idx < numbers.length) result += numbers[idx];
+          else if (closingSep === SEP_SYM && idx < symbols.length) result += symbols[idx];
+          else if (closingSep === SEP_EMO && idx < emojis.length) result += emojis[idx];
+          else {
+            // token matched nono table but index doesn't fit current mode -> fallback to '?'
+            result += "?";
+          }
+        } else {
+          // token not found in table -> fallback char
+          result += "?";
         }
-        
-        async function generatePoem() {
-            const decodedText = document.getElementById('decode-output').innerText.trim();
-            const poemOutputElement = document.getElementById('poem-output');
-            const button = document.querySelector('.cute-button');
+        continue;
+      }
 
-            if (!decodedText) {
-                poemOutputElement.innerText = "Please decode some text first!";
-                return;
-            }
-            
-            button.disabled = true;
-            button.innerText = "Generating...";
-            poemOutputElement.innerText = "";
-            
-            const prompt = `Rewrite the following text as a cute, short poem:\n\n${decodedText}`;
-
-            const payload = {
-                contents: [{ parts: [{ text: prompt }] }],
-                model: 'gemini-2.5-flash-preview-05-20',
-            };
-            const apiKey = "";
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${payload.model}:generateContent?key=${apiKey}`;
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                
-                if (!response.ok) {
-                    throw new Error(`API error: ${response.status}`);
-                }
-
-                const result = await response.json();
-                const text = result.candidates[0].content.parts[0].text;
-                poemOutputElement.innerText = text;
-            } catch (error) {
-                console.error("Error generating poem:", error);
-                poemOutputElement.innerText = "Blame the ai NOt me\nI'm srr Apple but can we stop getting my ass cancle";
-            } finally {
-                button.disabled = false;
-                button.innerText = "✨ Nono-Poem ✨";
-            }
+      // Not in mode: try read a letter token (5 chars) or fall back to raw char
+      if (i + 5 <= text.length) {
+        const seg = text.substring(i, i + 5);
+        const idx = nono.indexOf(seg);
+        if (idx !== -1) {
+          result += alphabet[idx];
+          i += 5;
+          continue;
         }
-    </script>
+      }
+
+      // fallback: raw char
+      result += text[i];
+      i++;
+    }
+
+    document.getElementById('decode-output').innerText = result;
+  }
+
+  // ---------- COPY TO CLIPBOARD ----------
+  function copyToClipboard(elementId, button) {
+    const outputElement = document.getElementById(elementId);
+    const textToCopy = outputElement.innerText;
+    const feedbackMessage = button.querySelector('.feedback-message');
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        if (feedbackMessage) {
+          feedbackMessage.classList.add('show');
+          setTimeout(() => feedbackMessage.classList.remove('show'), 1500);
+        }
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+        alert('Copy failed. Please try again.');
+      });
+      return;
+    }
+
+    // Fallback for older browsers
+    const textArea = document.createElement("textarea");
+    textArea.value = textToCopy;
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      if (feedbackMessage) {
+        feedbackMessage.classList.add('show');
+        setTimeout(() => feedbackMessage.classList.remove('show'), 1500);
+      }
+    } catch (err) {
+      console.error('Fallback: Failed to copy text: ', err);
+      alert('Copy failed. Please try again.');
+    }
+    document.body.removeChild(textArea);
+  }
+</script>
+
 </body>
 </html>
